@@ -8,5 +8,22 @@
 </head>
 <body>
     <h1>Descubra a Palavra!</h1>
+    <main>
+        <!-- terá 1 span para cada letra -->
+        <section class="sectionPalavraSecreta">
+            <p id="palavraSecreta" class="palavraSecretaCss"> <span>_</span> <span>_</span> <span>_</span> <span>_</span> </p>
+        </section>
+
+        <section class="interacoes">
+            <input type="text" id="userInput" maxlength="1" placeholder="letra">
+            <button id="botao" type="submit"> botao tentar XD </button>
+        </section>
+             
+        <section class="informacoes">
+            <p>Tentativas restantes: <span id="tentativas">6</span> </p>
+            <p>Pontuação: <span id="pontuacao">0</span> </p>
+            <p>Letras usadas: <span id="letras-usadas"></span> </p>
+        </section>
+    </main>
 </body>
 </html>
