@@ -1,0 +1,36 @@
+body{
+    background-color: pink;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 30px;
+    color: aqua;
+}
+
+h1{
+    font-size: 80px;
+}
+
+.palavraSecretaCss{
+    color: red;
+    font-size: 50px;
+    letter-spacing: 10px;
+}
+
+.interacoes{
+    word-spacing: 50px;
+}
+
+.botao{
+    border-style: solid;
+    border-color: cyan
+}
+
+#botao#userInput:hover{
+    background-color: red;
+    color: white;
+}
+
+.informacoes{
+    padding: 20px;
+}
