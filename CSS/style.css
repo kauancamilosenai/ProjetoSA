@@ -7,6 +7,7 @@ body{
 }
 
 h1{
+    padding: 40px;
     text-shadow: 2px 2px 2px black;
     font-size: 80px;
 }
@@ -23,16 +24,40 @@ h1{
 }
 
 .botao{
+    border: none;
     border-style: solid;
-    border-color: cyan
+    border-color: cyan;
+    font-weight: bold;
+    font-size: 25px;
+    width: 130px;
+    height: 60px;
 }
 
-#botao#userInput:hover{
+.classUserInput::placeholder{
+    text-transform: none
+}
+.classUserInput{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 60px;
+    border: none;
+    border-style: solid;
+    border-color: cyan;
+    width: 90px;
+    height: 55px;
+}
+
+
+
+#botao:hover,#userInput:hover{
+    cursor: pointer;
     background-color: red;
     color: white;
 }
 
 .informacoes{
+    font-size: 23px;
+    letter-spacing: 3px;
     text-shadow: 2px 2px 2px red;
-    padding: 20px;
+    padding: 65px;
 }

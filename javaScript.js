@@ -1,0 +1,1 @@
+// quando clicar em tentativa: aparecer o esqueleto 
