@@ -1,5 +1,6 @@
 body{
     background-color: greenyellow;
+    background-color: rgb(20, 1, 26);
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -10,20 +11,27 @@ h1{
     padding: 0px;
     text-shadow: 2px 2px 2px black;
     font-size: 80px;
+    padding: 0px;
+    font-size: 80px;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
 }
 
 .palavraSecretaCss{
     text-shadow: 2px 2px 0 pink;
     color: red;
+    text-shadow: 2px 2px 0 red;
+    color: aqua;
     font-size: 90px;
     letter-spacing: 15px;
 }
 
 .interacoes{    
     word-spacing: 50px;
+    word-spacing: 10px;
 }
 
 .botao{
+.botao {
     border: none;
     border-style: solid;
     border-color: cyan;
@@ -31,12 +39,17 @@ h1{
     font-size: 25px;
     width: 115px;
     height: 45px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to right, #00ffff, #ff00ff);
 }
 
 .classUserInput::placeholder{
     text-transform: none
 }
 .classUserInput{
+.classUserInput {
     text-transform: uppercase;
     text-align: center;
     font-weight: 50px;
@@ -44,13 +57,32 @@ h1{
     border-style: solid;
     border-color: cyan;
     width: 75px;
+    border: 2px solid transparent;
+    width: 300px;
     height: 38px;
+    border-radius: 10px;
+    color: white;
+   background: #040423;
+   border: 2px solid #00ffff;
+   outline: 2px solid #00ffff;
+   
+                
 }
 
 #botao:hover,#userInput:hover{
     cursor: pointer;
     background-color: red;
+.classUserInput {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 50px;
+    border: 2px solid #00ffff;
+    width: 300px;
+    height: 38px;
+    border-radius: 10px;
     color: white;
+    background: #040423;
+    outline: none;
 }
 
 .informacoes{
@@ -58,4 +90,20 @@ h1{
     letter-spacing: 3px;
     text-shadow: 2px 2px 2px red;
     padding: 40px;
+}
+}
+
+.informacoes { /*caixa*/
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 2px red;
+    border: 5px solid transparent;
+    padding: 10px;  /* tamanho */
+    width: 300px;  /* largura */
+    margin: 50px auto;
+    border-radius: 20px; /*arredondamento das bordas*/
+    box-shadow: 0 0 15px #00ffff, 0 0 20px #00ffff,  /*NEON*/
+            0 0 15px #ff00ff, 0 0 25px #ff00ff; 
+    background: linear-gradient(#0d0d2b, #0d0d2b) padding-box,
+            linear-gradient(to right, #00ffff, #ff00ff) border-box;   /*NEON*/
 }
