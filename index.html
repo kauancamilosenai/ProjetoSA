@@ -12,21 +12,23 @@
     <main>
         <!-- terá 1 span para cada letra com seu proprio id -->
         <section class="sectionPalavraSecreta">
-            <p id="palavraSecreta" class="palavraSecretaCss"> <span>P</span> <span>_</span> <span>_</span> <span>_</span> <span>_</span></p>
+            <p id="palavraSecreta" class="palavraSecretaCss">palavra secreta aqui</p>
         </section>
 
         <section class="interacoes">
             <input type="text" id="userInput" class="classUserInput" maxlength="1" placeholder="Letra" style="font-size:30px;">
             <button type="submit" id="botao" class="botao" > TENTAR </button>
+            <button type="submit" id="restartButton" class="restartButton"> Reiniciar / Palavra nova</button>
         </section>
              
         <section class="informacoes">
-            <p>Tentativas restantes: <span id="tentativas">6</span> </p>
-            <p>Pontuação: <span id="pontuacao">0</span> </p>
-            <p>Letras usadas: <span id="letras-usadas"></span> </p>
+            <p id="tentativasRestantes">Tentativas restantes: <span id="tentativas">6</span> </p>
+            <p id="pontuacao">Pontuação: <span id="pontuacao">0</span> </p>
+            <p id="displayLetrasUsadas">Letras usadas: <span id="letras-usadas"></span> </p>
         </section>
 
         
     </main>
 </body>
+<script src="assets/js/script.js"></script>
 </html>

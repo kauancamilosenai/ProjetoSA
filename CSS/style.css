@@ -31,7 +31,6 @@ h1{
 }
 
 .botao{
-.botao {
     border: none;
     border-style: solid;
     border-color: cyan;
@@ -46,10 +45,9 @@ h1{
 }
 
 .classUserInput::placeholder{
-    text-transform: none
+    text-transform: none;
 }
 .classUserInput{
-.classUserInput {
     text-transform: uppercase;
     text-align: center;
     font-weight: 50px;
@@ -72,7 +70,6 @@ h1{
 #botao:hover,#userInput:hover{
     cursor: pointer;
     background-color: red;
-.classUserInput {
     text-transform: uppercase;
     text-align: center;
     font-weight: 50px;
@@ -90,7 +87,6 @@ h1{
     letter-spacing: 3px;
     text-shadow: 2px 2px 2px red;
     padding: 40px;
-}
 }
 
 .informacoes { /*caixa*/
