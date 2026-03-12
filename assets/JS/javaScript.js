@@ -9,7 +9,7 @@ let letrasCorretas = [];
 let displayPalavra = [];
 let pontuacao = 0;
 
-const displayPalavra = document.getElementById(palavraSecreta);
+displayPalavra = document.getElementById(palavraSecreta);
 const displayTentativas = document.getElementById(tentativasRestantes);
 const displayPontuacao = Document.getElementById(pontuacao);
 const botaoReinicio = document.getElementById(restartButton);
