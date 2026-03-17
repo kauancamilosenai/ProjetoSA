@@ -2,8 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="CSS/style.css">
     <title>Adivinhe a Palavra!</title>
 </head>
@@ -11,24 +10,24 @@
     <h1 class="titulo">Descubra a Palavra!</h1>
     <main>
         <!-- terá 1 span para cada letra com seu proprio id -->
-        <section class="sectionPalavraSecreta">
-            <p id="palavraSecreta" class="palavraSecretaCss">palavra secreta aqui</p>
-        </section>
+        <div id="palavra,Secreta" class="palavraSecretaCss">
+            <span>_ </span> <span<span>_ </span><span>_ </span><span>_ </span>_ </span> 
+        </div>
 
         <section class="interacoes">
-            <button type="submit" id="restartButton" class="restartButton">Reiniciar</button>
+            <button type="submit" id="restartButtonJS" class="restartButtonCss">Reiniciar</button>
             <input type="text" id="userInput" class="classUserInput" maxlength="1" placeholder="Letra" style="font-size:30px;">
-            <button type="submit" id="botao" class="botao" > TENTAR </button>
+            <button type="submit" id="botaoJS" class="botaoTentar" > TENTAR </button>
         </section>
              
         <section class="informacoes">
             <p id="tentativasRestantes">Tentativas restantes: <span id="tentativas">6</span> </p>
-            <p id="pontuacao">Pontuação: <span id="pontuacao">0</span> </p>
+            <p class="pontuacao">Pontuação: <span id="pontuacao">0</span> </p>
             <p id="displayLetrasUsadas">Letras usadas: <span id="letras-usadas"></span> </p>
         </section>
 
         
     </main>
 </body>
-<script src="assets/js/script.js"></script>
+<script src="assets/JS/javaScript.js"></script>
 </html>

@@ -1,41 +1,49 @@
-const palavrasAleatorias = ["Chaves" , "Barril" , "Carros" , "Itens" ,
- "Spoiler" , "Seis" , "Transporte" , "Publicidade" , "Onze" , "SantaCatarina"];
+const listaPalavras = [
+    "JAVASCRIPT", "TECNOLOGIA", "PROGRAMACAO", "LOGICA", "HTML", 
+    "CSS", "BROWSER", "VARIAVEL", "FUNCAO", "ALGORITMO"
+];
 
+let palavraSecreta = "";    
+let tentativasRestantes = 6;
+let letrasTentadas = [];    
+let letrasCorretas = [];    
+let palavraExibida = [];    
+let pontuacao = 0;          
 
-let palavraSecreta = "";   //guarda a palavra que foi sorteada
-let tentativasRestantes = 6;   
-let letrasUsadas = [];
-let letrasCorretas = [];
-let displayPalavra = [];
-let pontuacao = 0;
+const displayPalavra = document.getElementById("palavra,Secreta");
+const displayTentativas = document.getElementById("tentativasRestantes");
+const displayPontuacao = document.getElementById("pontuacao");
+const btnReiniciar = document.getElementById("restartButtonJS");
 
-displayPalavra = document.getElementById(palavraSecreta);
-const displayTentativas = document.getElementById(tentativasRestantes);
-const displayPontuacao = Document.getElementById(pontuacao);
-const botaoReinicio = document.getElementById(restartButton);
+function iniciarJogo() {
 
-function iniciarJogo(){
-    const posicaoSorteadaDaListaDePalavras = Math.floor(math.random() * palavrasAleatorias.length);
+    const posicaoSorteadaDaListaDePalavras = Math.floor(Math.random() * listaPalavras.length);
     
-    palavraSecreta = palavrasAleatorias[posicaoSorteadaDaListaDePalavras].fill(_);
+    palavraSecreta = listaPalavras[posicaoSorteadaDaListaDePalavras].toUpperCase();
 
-    //reset limpando todos os dados
+    palavraExibida = Array(palavraSecreta.length).fill("_");
+
     tentativasRestantes = 6;
-    letrasUsadas = [];
+    letrasTentadas = [];
     letrasCorretas = [];
-   
+
     renderizarPalavra();
 }
 
-function renderizarPalavra(){
-    palavraSecreta.innerHTML = ""
-    displayPalavra.forEach(letra => {
+function renderizarPalavra() {
+    displayPalavra.innerHTML = ""; 
+
+    palavraExibida.forEach(letra => {
         const span = document.createElement("span");
-        span.innerText = letra;
-        palavraSecreta.appendChild(span);
-    }
-    )
+        span.innerText = letra;                      
+        displayPalavra.appendChild(span);            
+    });
+
+
+    displayTentativas.innerText = tentativasRestantes;
+    displayPontuacao.innerText = pontuacao;
 }
 
-botaoReinicio.addEventListener("click", iniciarJogo);
+btnReiniciar.addEventListener("click", iniciarJogo);
+
 iniciarJogo();

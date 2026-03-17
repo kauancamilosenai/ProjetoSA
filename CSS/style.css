@@ -23,6 +23,7 @@ h1{
     color: aqua;
     font-size: 90px;
     letter-spacing: 15px;
+    padding: 50px;
 }
 
 .interacoes{    
@@ -30,7 +31,7 @@ h1{
     word-spacing: 10px;
 }
 
-.botao,#restartButton{
+.botaoTentar,.restartButtonCss{
     border: none;
     border-style: solid;
     border-color: linear-gradient(to right, #00ffff, #ff00ff) border-box;
@@ -70,8 +71,6 @@ h1{
                 
 }
 
-
-
 .informacoes{
     font-size: 23px;
     letter-spacing: 3px;
@@ -92,4 +91,4 @@ h1{
             0 0 15px #ff00ff, 0 0 25px #ff00ff; 
     background: linear-gradient(#0d0d2b, #0d0d2b) padding-box,
             linear-gradient(to right, #00ffff, #ff00ff) border-box;   /*NEON*/
-}
+}   
