@@ -92,3 +92,7 @@ h1{
     background: linear-gradient(#0d0d2b, #0d0d2b) padding-box,
             linear-gradient(to right, #00ffff, #ff00ff) border-box;   /*NEON*/
 }   
+
+.referencia {
+    opacity: 0.06;
+}

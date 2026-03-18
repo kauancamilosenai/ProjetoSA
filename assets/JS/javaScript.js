@@ -8,12 +8,14 @@ let tentativasRestantes = 6;
 let letrasTentadas = [];    
 let letrasCorretas = [];    
 let palavraExibida = [];    
-let pontuacao = 0;          
+let pontuacao = 0;
 
 const displayPalavra = document.getElementById("palavra,Secreta");
-const displayTentativas = document.getElementById("tentativasRestantes");
+const displayTentativas = document.getElementById("tentativas");
 const displayPontuacao = document.getElementById("pontuacao");
+const btnTentar = document.getElementById("botaoJS")
 const btnReiniciar = document.getElementById("restartButtonJS");
+const input = document.getElementById("userInput")
 
 function iniciarJogo() {
 
@@ -23,7 +25,7 @@ function iniciarJogo() {
 
     palavraExibida = Array(palavraSecreta.length).fill("_");
 
-    tentativasRestantes = 6;
+    tentativas = 6;
     letrasTentadas = [];
     letrasCorretas = [];
 
@@ -40,10 +42,35 @@ function renderizarPalavra() {
     });
 
 
-    displayTentativas.innerText = tentativasRestantes;
+    displayTentativas.innerText = tentativas;
     displayPontuacao.innerText = pontuacao;
 }
 
 btnReiniciar.addEventListener("click", iniciarJogo);
+
+function getUserInput(){
+    let tentativa = document.getElementById("userInput").value;
+};
+
+btnTentar.addEventListener('click' , check); 
+
+function checkAttempt(){
+    getUserInput();
+    let tentativa = document.getElementById("userInput").value;
+    if(palavraSecreta.includes()){
+        for(i of palavraSecreta){
+            if(palavraSecreta[i] === tentativa){
+                displayPalavra[i] = tentativa
+            }
+        }
+        renderizarPalavra();
+    }
+}
+
+input.addEventListener("keypress" , (e) => {
+    if (e.key === "Enter"){
+        checkAttempt();
+    }
+})
 
 iniciarJogo();
