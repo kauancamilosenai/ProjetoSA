@@ -46,4 +46,4 @@ function renderizarPalavra() {
 
 btnReiniciar.addEventListener("click", iniciarJogo);
 
-iniciarJogo();
+iniciarJogo(); a
