@@ -3,74 +3,111 @@ const listaPalavras = [
     "CSS", "BROWSER", "VARIAVEL", "FUNCAO", "ALGORITMO"
 ];
 
-let palavraSecreta = "";    
-let tentativasRestantes = 6;
-let letrasTentadas = [];    
-let letrasCorretas = [];    
-let palavraExibida = [];    
-let pontuacao = 0;
+let secretWord = "";
+let attemptsLeft = 6;
+let guessedLetters = [];
+let correctLetters = [];
+let displayWord = [];
+let pontuacao = 0
+let jogoFinalizado = false;
+
 
 const displayPalavra = document.getElementById("palavra,Secreta");
 const displayTentativas = document.getElementById("tentativas");
 const displayPontuacao = document.getElementById("pontuacao");
-const btnTentar = document.getElementById("botaoJS")
 const btnReiniciar = document.getElementById("restartButtonJS");
-const input = document.getElementById("userInput")
+const btnChutar = document.getElementById("botaoJS");
+const inputLetra = document.getElementById("userInput");
 
-function iniciarJogo() {
 
+function iniciarJogo(){
     const posicaoSorteadaDaListaDePalavras = Math.floor(Math.random() * listaPalavras.length);
-    
-    palavraSecreta = listaPalavras[posicaoSorteadaDaListaDePalavras].toUpperCase();
-
-    palavraExibida = Array(palavraSecreta.length).fill("_");
-
-    tentativas = 6;
-    letrasTentadas = [];
-    letrasCorretas = [];
-
-    renderizarPalavra();
+    secretWord = listaPalavras[posicaoSorteadaDaListaDePalavras].toUpperCase();
+    displayWord = Array(secretWord.length).fill("_");
+    displayWord = secretWord.split('').map(letra => letra === " " ? " " : "_");
+    attemptsLeft = 6;
+    guessedLetters = [];
+    correctLetters = [];
+    document.getElementById("letras-usadas").innerText = ""; 
+    renderWord();
 }
 
-function renderizarPalavra() {
-    displayPalavra.innerHTML = ""; 
-
-    palavraExibida.forEach(letra => {
+function renderWord(){
+    displayPalavra.innerHTML = "";
+    displayWord.forEach(letra => {
         const span = document.createElement("span");
-        span.innerText = letra;                      
-        displayPalavra.appendChild(span);            
-    });
+        span.innerText = letra; 
+        displayPalavra.appendChild(span);
+    });    
 
-
-    displayTentativas.innerText = tentativas;
+    displayTentativas.innerText = attemptsLeft;
     displayPontuacao.innerText = pontuacao;
+
 }
 
-btnReiniciar.addEventListener("click", iniciarJogo);
+function chutar(){ // esta funcionando{
+    const apenasLetras = /^[A-Z]$/; //
+    
+    const chute = inputLetra.value.toUpperCase();
+    
+    inputLetra.value = "";
+    inputLetra.focus();
+    
+    if(!chute || !apenasLetras.test(chute)){
+        alert("Caractere invalido, não to querendo esse aí.");
+        return;
+    }
+    if(guessedLetters.includes(chute)){
+        alert("ce gosta dessa letra ein?")
+        return; //
+    } // }esta funcionando
 
-function getUserInput(){
-    let tentativa = document.getElementById("userInput").value;
-};
 
-btnTentar.addEventListener('click' , check); 
+    guessedLetters.push(chute);
 
-function checkAttempt(){
-    getUserInput();
-    let tentativa = document.getElementById("userInput").value;
-    if(palavraSecreta.includes()){
-        for(i of palavraSecreta){
-            if(palavraSecreta[i] === tentativa){
-                displayPalavra[i] = tentativa
+    if(secretWord.includes(chute)){
+
+        for (let i = 0; i < secretWord.length; i++) {
+            if (secretWord[i] === chute){
+                displayWord[i] = chute;
             }
         }
-        renderizarPalavra();
+    }else {
+        attemptsLeft--;
+       
+        const letrasErradas = guessedLetters.filter(letra => !secretWord.includes(letra));
+        
+        document.getElementById("letras-usadas").innerText =  letrasErradas.join(", ");
+    }
+    renderWord();
+    checarGameOver();
+}
+
+function checarGameOver(){
+  const tempoEspera = 1000;
+  
+    if(attemptsLeft <= 0){
+        setTimeout(() => {
+        alert("Acabou o jogo, a palavra era: " + secretWord);
+        iniciarJogo();
+        }, tempoEspera);
+    } else if (!displayWord.includes("_")){
+        setTimeout(() => {
+        alert("Pabens");
+        pontuacao += 10;
+        iniciarJogo();
+        }, tempoEspera); 
     }
 }
 
-input.addEventListener("keypress" , (e) => {
-    if (e.key === "Enter"){
-        checkAttempt();
+inputLetra.addEventListener("keypress", (e) => {
+    if (e.key === "Enter"){ 
+        chutar();
     }
-})
+});
+btnChutar.addEventListener("click",chutar);
+btnReiniciar.addEventListener("click", iniciarJogo);
+
+
 
 iniciarJogo();
